@@ -15,6 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import FadeIn from "../components/FadeIn";
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -26,6 +27,7 @@ const navItems = [
 const Header = () => {
 
   return (
+    <FadeIn>
     <header className="container mx-auto px-4 md:mx-auto select-none site-header">
       <div className="nav-bar grid grid-cols-3 items-center">
         {/* Left: logo */}
@@ -82,6 +84,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </FadeIn>
   );
 };
 

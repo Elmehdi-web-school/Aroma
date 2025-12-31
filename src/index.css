@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+
 @custom-variant dark (&:is(.dark *));
 
 @keyframes scrollDot {
@@ -21,6 +23,8 @@
 .animate-scroll-dot {
   animation: scrollDot 1.8s infinite;
 }
+
+
 
 
 /* html,

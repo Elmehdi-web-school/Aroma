@@ -1,32 +1,55 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8 px-4">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-[#E6E2D8] text-[#000000]">
+      {/* Top */}
+      <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-14">
+        {/* Brand */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Aroma Dades</h3>
-          <p className="text-gray-300">
-            Écolodge authentique dans la vallée des Dades, Maroc.
+          <h3 className="text-3xl font-serif mb-6">
+            Aroma Dades
+          </h3>
+          <p className="leading-relaxed max-w-sm">
+            Écolodge authentique niché au cœur de la vallée des Dades,
+            offrant calme, nature et hospitalité berbère.
           </p>
         </div>
+
+        {/* Contact */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Contact</h3>
-          <p className="text-gray-300">Adresse : Vallée des Dades, Maroc</p>
-          <p className="text-gray-300">Téléphone : +212 6 XX XX XX XX</p>
-          <p className="text-gray-300">Email : contact@aromadades.com</p>
+          <h4 className="uppercase tracking-widest text-sm mb-6">
+            Contact
+          </h4>
+          <ul className="space-y-3">
+            <li>Vallée des Dades, Maroc</li>
+            <li>+212 6 XX XX XX XX</li>
+            <li>contact@aromadades.com</li>
+          </ul>
         </div>
+
+        {/* Social */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Suivez-nous</h3>
-          <div className="flex space-x-4">
-            <a href="#" className="text-gray-300 hover:text-white">Facebook</a>
-            <a href="#" className="text-gray-300 hover:text-white">Instagram</a>
-            <a href="#" className="text-gray-300 hover:text-white">Twitter</a>
+          <h4 className="uppercase tracking-widest text-sm mb-6">
+            Suivez-nous
+          </h4>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition">
+              Instagram
+            </a>
+            <a href="#" className="hover:text-white transition">
+              Facebook
+            </a>
+            <a href="#" className="hover:text-white transition">
+              Twitter
+            </a>
           </div>
         </div>
       </div>
-      <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-300">
-        <p>&copy; 2024 Aroma Dades. Tous droits réservés.</p>
+
+      {/* Bottom */}
+      <div className="border-t border-[#5a3b26] py-6 text-center text-sm">
+        © {new Date().getFullYear()} Aroma Dades — Tous droits réservés
       </div>
     </footer>
   );

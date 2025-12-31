@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import FadeIn from "../components/FadeIn";
 
 const Hero = () => {
   /* =====================
@@ -46,6 +47,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center text-center px-4">
       <div className="text-white flex flex-col items-center">
+        <FadeIn>
         <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold">
           Découvrez Ecolodge <br />
           <span className="text-amber-400">
@@ -53,6 +55,7 @@ const Hero = () => {
             <span className="animate-pulse">|</span>
           </span>
         </h1>
+        </FadeIn>
 
         {/* Scroll button */}
         <button
