@@ -312,7 +312,7 @@ body > * {
 
 /* Keep the logo constrained inside the bar */
 .nav-bar img {
-    max-height: 52px;
+    max-height: 60px;
     height: auto;
 }
 

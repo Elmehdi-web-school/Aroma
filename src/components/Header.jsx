@@ -19,7 +19,7 @@ import FadeIn from "../components/FadeIn";
 
 const navItems = [
   { to: '/', label: 'Home' },
-  { to: '/A propos', label: 'A propos' },
+  { to: '/About', label: 'A propos' },
   { to: '/gallerie', label: 'Gallerie' },
   { to: '/contact', label: 'Contact' },
 ];
@@ -58,7 +58,7 @@ const Header = () => {
         </div>
 
         {/* Right: actions */}
-        <div className="flex items-center justify-end gap-4">
+        <div className="hidden sm:flex items-center justify-end gap-4">
           <a
             href="https://www.booking.com/hotel/ma/ecolodge-aroma-dades.fr.html"
             className="booking-btn"
@@ -67,21 +67,48 @@ const Header = () => {
           >
             Booking
           </a>
+        </div>
           <div className="sm:hidden">
             <Sheet>
               <SheetTrigger><FontAwesomeIcon icon={faBars} className="text-2xl mt-1"/></SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                  <SheetTitle>Are you absolutely sure?</SheetTitle>
-                  <SheetDescription>
-                    This action cannot be undone. This will permanently delete your account
-                    and remove your data from our servers.
-                  </SheetDescription>
+                  <SheetTitle>Ecolodge AROMA DADES</SheetTitle>
                 </SheetHeader>
+                <div className="flex justify-center">
+                  <nav aria-label="Primary">
+                    <ul className="flex flex-col items-center gap-4">
+                      {navItems.map((item) => (
+                        <li key={item.to}>
+                          <NavLink
+                            to={item.to}
+                            className={({ isActive }) =>
+                              `nav-link text-black transition-colors text-lg ${
+                                isActive ? "font-medium" : ""
+                              }`
+                            }
+                          >
+                            {item.label}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                </div>
+
+                <SheetFooter>
+                  <a
+                    href="https://www.booking.com/hotel/ma/ecolodge-aroma-dades.fr.html"
+                    className="p-4 mb-5 text-center bg-[#8B5A2B] text-[#ffff] rounded-full font-semibold hover:scale-105 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Booking
+                  </a>
+                </SheetFooter>
               </SheetContent>
             </Sheet>
           </div>
-        </div>
       </div>
     </header>
     </FadeIn>

@@ -124,6 +124,82 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ===== 03 ÉQUIPEMENTS ===== */}
+<section className="py-36 bg-white text-center">
+  <FadeIn>
+    <span className="text-sm tracking-widest text-[#8B5E3C]">| 03 |</span>
+    <h2 className="text-5xl font-serif mt-6 mb-20 text-[#3E2A1A]">
+      Équipements
+    </h2>
+  </FadeIn>
+
+  <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-14">
+    {[
+      ["🚐", "Navette aéroport"],
+      ["🅿️", "Parking gratuit"],
+      ["🚭", "Chambres non-fumeurs"],
+      ["🍽️", "Restaurant"],
+      ["♿", "Accès personnes handicapées"],
+      ["🛎️", "Service d’étage"],
+      ["📶", "Wi-Fi gratuit"],
+      ["👨‍👩‍👧‍👦", "Chambres familiales"],
+      ["☕", "Plateau / bouilloire"],
+      ["🥐", "Petit-déjeuner"],
+    ].map((item, index) => (
+      <FadeIn key={index} delay={index * 80}>
+        <div className="flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-[#f2f0bf]/40 transition">
+          <div className="text-4xl">{item[0]}</div>
+          <p className="text-[#3E2A1A] font-medium">{item[1]}</p>
+        </div>
+      </FadeIn>
+    ))}
+  </div>
+</section>
+
+<hr />
+
+{/* ===== 04 ACTIVITÉS ===== */}
+<section className="py-36 bg-[#f2f0bf] text-center">
+  <FadeIn>
+    <span className="text-sm tracking-widest text-[#8B5E3C]">| 04 |</span>
+    <h2 className="text-5xl font-serif mt-6 mb-20 text-[#3E2A1A]">
+      Activités
+    </h2>
+  </FadeIn>
+
+  <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-14">
+    {[
+      ["🚲", "Location de vélos", "En supplément"],
+      ["🎶", "Concerts & spectacles", null],
+      ["👨‍🍳", "Cours de cuisine", "En supplément"],
+      ["🏺", "Culture locale", "Visites & ateliers"],
+      ["🍷", "Happy hour", "En supplément"],
+      ["🍽️", "Dîners à thème", "En supplément"],
+      ["🚴‍♂️", "Visites à vélo", "En supplément"],
+      ["🥾", "Balades à pied", "En supplément"],
+      ["🔥", "Animations en soirée", null],
+      ["🚵", "Cyclisme", null],
+      ["🏔️", "Randonnée", "En supplément"],
+      ["🌄", "Activités extérieures", "Hors établissement"],
+    ].map((item, index) => (
+      <FadeIn key={index} delay={index * 80}>
+        <div className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all">
+          <div className="text-5xl mb-6">{item[0]}</div>
+          <h3 className="text-xl text-[#3E2A1A] mb-2">
+            {item[1]}
+          </h3>
+          {item[2] && (
+            <p className="text-sm text-[#8B5E3C] tracking-wide">
+              {item[2]}
+            </p>
+          )}
+        </div>
+      </FadeIn>
+    ))}
+  </div>
+</section>
+
+
       {/* ===== 03 CHAMBRES ===== */}
       <section className="py-36 bg-white text-center">
         <FadeIn>
