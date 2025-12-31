@@ -1,33 +1,89 @@
+// import { Button } from "@/components/ui/button"
+// import { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
 import AROMA_LOGO from '../images/Untitled design.png';
-import { Link } from 'react-router-dom';
-// import { Button } from "@/components/ui/button";
+import { NavLink, Link } from 'react-router-dom';
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/A propos', label: 'A propos' },
+  { to: '/gallerie', label: 'Gallerie' },
+  { to: '/contact', label: 'Contact' },
+];
 
 const Header = () => {
+
   return (
-    <>
-        <div className="py-2 container px-4 flex justify-between items-center md:mx-auto bg-white/50 backdrop-blur-2xl select-none">
-            <div className='flex items-center max-sm:w-full max-sm:justify-between gap-5 '>
-                <Link to={"/"} className="logo w-20 sm:w-28 h-auto object-contain">
-                    <img src={AROMA_LOGO} alt=""/>
-                </Link>
+    <header className="container mx-auto px-4 md:mx-auto select-none site-header">
+      <div className="nav-bar grid grid-cols-3 items-center">
+        {/* Left: logo */}
+        <div className="flex items-center">
+          <Link to="/" className="logo w-20 sm:w-28 h-auto object-contain">
+            <img src={AROMA_LOGO} alt="Aroma Hotel logo" />
+          </Link>
+        </div>
 
-                <ul className='flex items-center gap-5 max-sm:hidden '>
-                    <Link to={"/"}><li><p className='transition-all hover:underline'>Home</p></li></Link>
-                    <Link to={"/A propos"}><li>A propos</li></Link>
-                    <Link to={"/gallerie"}><li>Gallerie</li></Link>
-                    <Link to={"/contact"}><li>Contact</li></Link>
-                </ul>
-    
-                <a href="https://www.booking.com/hotel/ma/ecolodge-aroma-dades.fr.html?aid=318615&label=New_French_FR_MA_26194234465-7R4oKc6r3TlpeFPffvadGQSM217287030916%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-194593862665%3Alp1009979%3Ali%3Adem%3Adm&sid=f90629d57cce78b3fb0cf475e7426a6c&all_sr_blocks=1165332601_389195985_1_41_0&checkin=2025-12-29&checkout=2025-12-30&dest_id=-31639&dest_type=city&group_adults=1&group_children=0&hapos=1&highlighted_blocks=1165332601_389195985_1_41_0&hpos=1&matching_block_id=1165332601_389195985_1_41_0&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1165332601_389195985_1_41_0__3594&srepoch=1767012597&srpvid=95ff5a388cf00233&type=total&ucfs=1&chal_t=1767093892475&force_referer=#availability" 
-                className='cursor-pointer'
-                target='_blank'
-                >
-                    Booking
-                </a>
-            </div>
+        {/* Center: nav */}
+        <div className="flex justify-center">
+          <nav className="hidden sm:flex nav-container" aria-label="Primary">
+            <ul className="flex items-center gap-6">
+              {navItems.map((item) => (
+                <li key={item.to}>
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) =>
+                      `nav-link text-black transition-colors ${isActive ? 'font-medium' : ''}`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Right: actions */}
+        <div className="flex items-center justify-end gap-4">
+          <a
+            href="https://www.booking.com/hotel/ma/ecolodge-aroma-dades.fr.html"
+            className="booking-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Booking
+          </a>
+          <div className="sm:hidden">
+            <Sheet>
+              <SheetTrigger><FontAwesomeIcon icon={faBars} className="text-2xl mt-1"/></SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Are you absolutely sure?</SheetTitle>
+                  <SheetDescription>
+                    This action cannot be undone. This will permanently delete your account
+                    and remove your data from our servers.
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
       </div>
-    </>
-  )
-}
+    </header>
+  );
+};
 
-export default Header
+export default Header;
+
