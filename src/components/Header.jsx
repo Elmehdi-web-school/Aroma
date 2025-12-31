@@ -40,7 +40,7 @@ const Header = () => {
         {/* Center: nav */}
         <div className="flex justify-center">
           <nav className="hidden sm:flex nav-container" aria-label="Primary">
-            <ul className="flex items-center gap-6">
+            <ul className="flex items-center gap-4">
               {navItems.map((item) => (
                 <li key={item.to}>
                   <NavLink
