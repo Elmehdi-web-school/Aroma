@@ -5,24 +5,25 @@ import Landing from "../components/Landing";
 import Footer from "../components/Footer";
 import FadeIn from "../components/FadeIn";
 
-/* ===== IMAGES ===== */
-import room1 from "../images/room1.jpg";
-import room2 from "../images/room2.jpg";
-import room3 from "../images/room3.jpg";
-import room4 from "../images/room4.jpg";
-import room5 from "../images/room5.jpg";
+/* ===== IMAGES (Vercel-safe) ===== */
+const rooms = [
+  "/images/room1.jpg",
+  "/images/room2.jpg",
+  "/images/room3.jpg",
+  "/images/room4.jpg",
+  "/images/room5.jpg",
+];
 
-import pic1 from "../images/pic1.jpg";
-import pic2 from "../images/pic2.jpg";
-import pic3 from "../images/pic3.jpg";
-import pic4 from "../images/pic4.jpg";
-import pic5 from "../images/pic5.jpg";
-import pic6 from "../images/pic6.jpg";
-import pic7 from "../images/pic7.jpg";
-import pic8 from "../images/pic8.jpg";
-
-const rooms = [room1, room2, room3, room4, room5];
-const gallery = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
+const gallery = [
+  "/images/pic1.jpg",
+  "/images/pic2.jpg",
+  "/images/pic3.jpg",
+  "/images/pic4.jpg",
+  "/images/pic5.jpg",
+  "/images/pic6.jpg",
+  "/images/pic7.jpg",
+  "/images/pic8.jpg",
+];
 
 const reviews = [
   {
@@ -198,7 +199,7 @@ const Home = () => {
       <section
         className="relative py-36 text-center text-white"
         style={{
-          backgroundImage: `url(${pic2})`,
+          backgroundImage: `url(/images/pic2.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

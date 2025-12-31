@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import pic3 from "../images/pic3.jpg";
-import pic4 from "../images/pic4.jpg";
-import pic5 from "../images/pic5.jpg";
-
-const images = [pic5, pic3, pic4];
+const images = [
+  "/images/pic5.jpg",
+  "/images/pic3.jpg",
+  "/images/pic4.jpg",
+];
 
 const Landing = ({ children }) => {
   const [currentImage, setCurrentImage] = useState(0);

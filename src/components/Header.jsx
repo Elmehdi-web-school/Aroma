@@ -3,7 +3,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import AROMA_LOGO from '../images/Untitled design.png';
+// import AROMA_LOGO from '../images/Untitled design.png';
 import { NavLink, Link } from 'react-router-dom';
 import {
   Sheet,
@@ -33,7 +33,7 @@ const Header = () => {
         {/* Left: logo */}
         <div className="flex items-center">
           <Link to="/" className="logo w-20 sm:w-28 h-auto object-contain">
-            <img src={AROMA_LOGO} alt="Aroma Hotel logo" />
+            <img src="/images/Untitled design.png" alt="Aroma Hotel logo" />
           </Link>
         </div>
 
