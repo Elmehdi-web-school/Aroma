@@ -10,15 +10,15 @@ const About = () => {
         <Header />
       {/* ===== HERO ===== */}
       <section
-        className="relative min-h-[80vh] flex items-center justify-center text-center"
+        className="relative min-h-[50vh] md:min-h-[70vh] flex items-center justify-center text-center"
       >
         <FadeIn>
           <div className="relative z-10 max-w-4xl px-6 text-white">
-            <span className="tracking-widest text-sm">| À PROPOS |</span>
-            <h1 className="text-5xl md:text-6xl font-serif mt-6 text-amber-400">
+            <span className="tracking-widest text-xl md:text-2xl md:font-bold">| À PROPOS |</span>
+            <h1 className="text-3xl md:text-7xl font-serif mt-6 text-amber-400">
               Ecolodge Aroma Dades
             </h1>
-            <p className="mt-6 text-lg text-white/90">
+            <p className="mt-6 text-md md:text-lg text-white/90">
               Une expérience authentique au cœur de la vallée des Dades
             </p>
           </div>

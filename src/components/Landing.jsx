@@ -18,7 +18,7 @@ const Landing = ({ children }) => {
 
   return (
     <section
-      className="relative min-h-screen bg-cover bg-center transition-all duration-1000"
+      className="h-[75vh] md:min-h-screen bg-cover bg-center relative pb-16 transition-all duration-1000"
       style={{ backgroundImage: `url(${images[currentImage]})` }}
     >
       {/* Dark overlay */}

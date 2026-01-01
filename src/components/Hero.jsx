@@ -45,7 +45,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center text-center px-4">
+    <section className="h-[50vh] md:min-h-screen flex items-center justify-center text-center px-4">
       <div className="text-white flex flex-col items-center">
         <FadeIn>
         <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold">

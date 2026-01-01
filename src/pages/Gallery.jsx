@@ -1,24 +1,43 @@
+import { useState, useRef } from "react";
 import Header from "../components/Header";
 import FadeIn from "../components/FadeIn";
 import Landing from "../components/Landing";
 import Footer from "../components/Footer";
 
+const images = [
+  "/images/pic1.jpg",
+  "/images/pic2.jpg",
+  "/images/pic3.jpg",
+  "/images/pic4.jpg",
+  "/images/pic5.jpg",
+  "/images/pic6.jpg",
+  "/images/pic7.jpg",
+  "/images/pic8.jpg",
+  "/images/room1.jpg",
+  "/images/room2.jpg",
+  "/images/room3.jpg",
+  "/images/room4.jpg",
+  "/images/room5.jpg",
+];
+
 const Gallery = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   return (
     <>
       <Landing>
         <Header />
 
         {/* ===== HERO ===== */}
-        <section className="py-40 text-center">
+        <section className="py-20 md:py-40 text-center">
           <FadeIn>
-            <span className="text-sm tracking-widest text-white">
+            <span className="text-xl md:text-2xl md:font-bold tracking-widest text-white">
               | GALERIE |
             </span>
-            <h1 className="text-6xl md:text-7xl font-serif mt-8 text-amber-400">
+            <h1 className="text-3xl md:text-7xl font-serif mt-8 text-amber-400">
               Instants d’Aroma Dades
             </h1>
-            <p className="max-w-xl mx-auto mt-8 text-lg text-white">
+            <p className="max-w-xl mx-auto mt-8 text-md md:text-lg text-white">
               Une immersion visuelle au cœur de la vallée des Dades, entre nature,
               culture et sérénité.
             </p>
@@ -41,57 +60,140 @@ const Gallery = () => {
           </FadeIn>
         </section>
 
-        {/* ===== GALLERY GRID (SHale Style) ===== */}
+        {/* ===== GALLERY GRID ===== */}
         <section className="pb-40 px-6">
-          <div className="max-w-7xl mx-auto grid grid-cols-3 gap-10 auto-rows-[260px]">
-
-            <GalleryImage src="/images/pic1.jpg" className="row-span-2 rounded-[40px]" />
-            <GalleryImage src="/images/pic2.jpg" className="row-span-3 rounded-full" />
-            <GalleryImage src="/images/pic3.jpg" className="row-span-2 rounded-[40px]" />
-
-            <GalleryImage src="/images/pic4.jpg" className="row-span-2 rounded-full" />
-            <GalleryImage src="/images/pic5.jpg" className="row-span-2 rounded-[40px]" />
-            <GalleryImage src="/images/pic6.jpg" className="row-span-2 rounded-full" />
-
-            <GalleryImage src="/images/pic7.jpg" className="row-span-3 rounded-[40px]" />
-            <GalleryImage src="/images/pic8.jpg" className="row-span-2 rounded-full" />
-            <GalleryImage src="/images/pic1.jpg" className="row-span-2 rounded-full" />
+          <div className="
+            max-w-7xl mx-auto 
+            grid 
+            grid-cols-1 
+            md:grid-cols-2 
+            lg:grid-cols-3 
+            gap-8 
+            lg:gap-10
+            auto-rows-auto
+            lg:auto-rows-[260px]
+          ">
+            {images.slice(0, 9).map((src, i) => (
+              <GalleryImage
+                key={i}
+                src={src}
+                index={i}
+                onOpen={setActiveIndex}
+                className={`
+                  ${i % 3 === 1 ? "lg:row-span-3 rounded-full" : "lg:row-span-2 rounded-[40px]"}
+                `}
+              />
+            ))}
 
             {/* CENTERED LAST ROW */}
-            <div className="col-span-3 flex justify-center gap-12 mt-24">
-              <GalleryImage
-                src="/images/pic2.jpg"
-                className="w-95 h-65 rounded-full"
-              />
-              <GalleryImage
-                src="/images/pic3.jpg"
-                className="w-95 h-65 rounded-[40px]"
-              />
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col sm:flex-row justify-center gap-8 mt-16">
+              {images.slice(9).map((src, i) => (
+                <GalleryImage
+                  key={i + 9}
+                  src={src}
+                  index={i + 9}
+                  onOpen={setActiveIndex}
+                  className="w-full sm:w-[320px] h-55 rounded-full"
+                />
+              ))}
             </div>
-
           </div>
         </section>
-
-
-
       </main>
 
       <Footer />
+
+      {/* ===== LIGHTBOX ===== */}
+      {activeIndex !== null && (
+        <Lightbox
+          images={images}
+          index={activeIndex}
+          setIndex={setActiveIndex}
+        />
+      )}
     </>
   );
 };
 
 export default Gallery;
 
-const GalleryImage = ({ src, className = "" }) => (
+/* ============================= */
+/* ===== GALLERY IMAGE ===== */
+/* ============================= */
+const GalleryImage = ({ src, index, onOpen, className }) => (
   <FadeIn>
-    <div className={`relative overflow-hidden ${className}`}>
+    <div
+      onClick={() => onOpen(index)}
+      className={`relative overflow-hidden cursor-pointer ${className}`}
+    >
+      {/* Grain overlay */}
+      <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.08] bg-[url('/grain.png')]" />
+
       <img
         src={src}
         alt=""
-        className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110"
+        loading="lazy"
+        className="w-full h-full min-h-55 object-cover transition-transform duration-700 hover:scale-105"
       />
     </div>
   </FadeIn>
 );
 
+/* ============================= */
+/* ===== LIGHTBOX MODAL ===== */
+/* ============================= */
+const Lightbox = ({ images, index, setIndex }) => {
+  const touchStart = useRef(0);
+
+  const prev = () =>
+    setIndex((index - 1 + images.length) % images.length);
+  const next = () =>
+    setIndex((index + 1) % images.length);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+      onClick={() => setIndex(null)}
+    >
+      <div
+        className="relative max-w-6xl w-full px-6"
+        onClick={(e) => e.stopPropagation()}
+        onTouchStart={(e) => (touchStart.current = e.touches[0].clientX)}
+        onTouchEnd={(e) => {
+          const delta = touchStart.current - e.changedTouches[0].clientX;
+          if (delta > 50) next();
+          if (delta < -50) prev();
+        }}
+      >
+        {/* Grain overlay */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.07] bg-[url('/grain.png')]" />
+
+        <img
+          src={images[index]}
+          alt=""
+          className="w-full max-h-[85vh] object-contain rounded-2xl"
+        />
+
+        {/* Controls */}
+        <button
+          onClick={prev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl"
+        >
+          ‹
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl"
+        >
+          ›
+        </button>
+        <button
+          onClick={() => setIndex(null)}
+          className="absolute top-4 right-4 text-white text-3xl"
+        >
+          ×
+        </button>
+      </div>
+    </div>
+  );
+};

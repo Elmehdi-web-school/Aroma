@@ -189,6 +189,12 @@ body > * {
     }
 }
 
+.input {
+  @apply w-full border border-gray-300 rounded-full px-6 py-4 text-sm
+  focus:outline-none focus:ring-1 focus:ring-black;
+}
+
+
 /* Navigation visual polish */
 .site-header {
     /* header shell — keep transparent so visual bar is the .nav-bar */

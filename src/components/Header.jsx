@@ -19,8 +19,8 @@ import FadeIn from "../components/FadeIn";
 
 const navItems = [
   { to: '/', label: 'Home' },
-  { to: '/About', label: 'A propos' },
   { to: '/gallerie', label: 'Gallerie' },
+  { to: '/About', label: 'A propos' },
   { to: '/contact', label: 'Contact' },
 ];
 
