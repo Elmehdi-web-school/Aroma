@@ -110,7 +110,7 @@ body > * {
     --soft-warm-gray: #E6E2D8; /* smoke / highlights */
 
     /* Semantic tokens mapped to palette */
-    --background: var(--soft-warm-gray);
+    /* --background: var(--soft-warm-gray); */
     --foreground: var(--deep-green);
     --card: #ffffff;
     --card-foreground: var(--dark-earth);
@@ -292,7 +292,7 @@ body > * {
 }
 
 .nav-container ul li:hover {
-    background: rgba(63,95,58,0.04);
+    color: rgba(63,95,58,0.04);
 }
 
 .nav-link::after {

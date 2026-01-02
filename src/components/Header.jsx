@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <FadeIn>
-    <header className="container mx-auto px-4 md:mx-auto select-none site-header">
+    <header className="container sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm mx-auto px-4 md:mx-auto select-none site-header" >
       <div className="nav-bar grid grid-cols-3 items-center">
         {/* Left: logo */}
         <div className="flex items-center">
@@ -46,7 +46,7 @@ const Header = () => {
                   <NavLink
                     to={item.to}
                     className={({ isActive }) =>
-                      `nav-link text-black transition-colors ${isActive ? 'font-medium' : ''}`
+                      `nav-link text-black text-sm transition-colors ${isActive ? 'font-medium' : ''}`
                     }
                   >
                     {item.label}
@@ -71,7 +71,7 @@ const Header = () => {
           <div className="sm:hidden">
             <Sheet>
               <SheetTrigger><FontAwesomeIcon icon={faBars} className="text-2xl mt-1"/></SheetTrigger>
-              <SheetContent>
+              <SheetContent className="bg-[#E6E2D8]">
                 <SheetHeader>
                   <SheetTitle>Ecolodge AROMA DADES</SheetTitle>
                 </SheetHeader>

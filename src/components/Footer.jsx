@@ -1,12 +1,15 @@
 import React from "react";
+import { Instagram } from "lucide-react";
+
 
 const Footer = () => {
   return (
-    <footer className="bg-[rgba(255,255,255,0.6)] -mb-10 text-[#000000]">
+    <footer className="bg-[#e9f2f1] -mb-10 text-[#000000]">
       {/* Top */}
-      <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-14">
+      <div className="max-w-7xl mx-auto pl-10 py-20 grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-40">
         {/* Brand */}
         <div>
+          <img src="/images/Untitled design.png" alt="Aroma Hotel logo" className="w-20 sm:w-28 h-auto object-contain" />
           <h3 className="text-3xl font-serif mb-6">
             Aroma Dades
           </h3>
@@ -33,15 +36,20 @@ const Footer = () => {
           <h4 className="uppercase tracking-widest text-sm mb-6">
             Suivez-nous
           </h4>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition">
+          <div className="flex gap-2">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/ecolodge_aroma_dades?igsh=MWkzYWx0ODA0bWVwcg=="
+              className="
+                flex items-center gap-2
+                text-[#E1306C]
+                md:text-[#000000]
+                md:hover:text-[#E1306C]
+                transition
+              "
+            >
+              <Instagram className="w-5" />
               Instagram
-            </a>
-            <a href="#" className="hover:text-white transition">
-              Facebook
-            </a>
-            <a href="#" className="hover:text-white transition">
-              Twitter
             </a>
           </div>
         </div>

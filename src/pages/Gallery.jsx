@@ -13,11 +13,11 @@ const images = [
   "/images/pic6.jpg",
   "/images/pic7.jpg",
   "/images/pic8.jpg",
+  "/images/pic18.jpg",
   "/images/room1.jpg",
   "/images/room2.jpg",
   "/images/room3.jpg",
   "/images/room4.jpg",
-  "/images/room5.jpg",
 ];
 
 const Gallery = () => {
@@ -32,7 +32,7 @@ const Gallery = () => {
         <section className="py-20 md:py-40 text-center">
           <FadeIn>
             <span className="text-xl md:text-2xl md:font-bold tracking-widest text-white">
-              | GALERIE |
+              | GALLERIE |
             </span>
             <h1 className="text-3xl md:text-7xl font-serif mt-8 text-amber-400">
               Instants d’Aroma Dades
@@ -48,14 +48,13 @@ const Gallery = () => {
       <main className="bg-[#f7f6f2] text-[#2e2e2e]">
 
         {/* ===== TITLE ===== */}
-        <section className="pt-32 pb-20 text-center px-6">
+        <section className="pt-32 pb-20 px-6">
           <FadeIn>
-            <p className="text-xs tracking-widest uppercase mb-6">
+            <p className="text-xs tracking-widest text-center uppercase mb-6">
               | Gallery |
             </p>
-            <h2 className="text-4xl md:text-5xl font-serif max-w-4xl mx-auto leading-tight">
-              The Place Of Your Dreams, Where You Will Completely Immerse Yourself In
-              The Atmosphere Of Relaxation
+            <h2 className="text-4xl md:text-5xl text-start md:text-center font-serif max-w-4xl mx-auto leading-tight">
+              Le lieu de vos rêves, où vous vous plongerez complètement dans une atmosphère de détente et de tranquillité.
             </h2>
           </FadeIn>
         </section>

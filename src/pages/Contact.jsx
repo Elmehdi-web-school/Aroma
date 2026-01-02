@@ -148,7 +148,7 @@ const Contact = () => {
         </section>
 
         {/* ===== GOOGLE MAP ===== */}
-        <div className="w-full h-96 overflow-hidden mt-8 mb-8 shadow-md">
+        <div className="w-full h-96 overflow-hidden mt-8 shadow-md">
           <iframe
             title="Localisation Aroma Dades"
             src="https://www.google.com/maps?q=Souk+Elkhmis+Dades,+Morocco&output=embed"
