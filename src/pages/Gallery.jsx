@@ -5,19 +5,19 @@ import Landing from "../components/Landing";
 import Footer from "../components/Footer";
 
 const images = [
-  "/images/pic1.jpg",
-  "/images/pic2.jpg",
-  "/images/pic3.jpg",
-  "/images/pic4.jpg",
-  "/images/pic5.jpg",
-  "/images/pic6.jpg",
-  "/images/pic7.jpg",
-  "/images/pic8.jpg",
-  "/images/pic18.jpg",
-  "/images/room1.jpg",
-  "/images/room2.jpg",
-  "/images/room3.jpg",
-  "/images/room4.jpg",
+  "/images/pic1.webp",
+  "/images/pic2.webp",
+  "/images/pic3.webp",
+  "/images/pic4.webp",
+  "/images/pic5.webp",
+  "/images/pic6.webp",
+  "/images/pic7.webp",
+  "/images/pic8.webp",
+  "/images/pic18.webp",
+  "/images/room1.webp",
+  "/images/room2.webp",
+  "/images/room3.webp",
+  "/images/room4.webp",
 ];
 
 const Gallery = () => {
@@ -53,7 +53,7 @@ const Gallery = () => {
             <p className="text-xs tracking-widest text-center uppercase mb-6">
               | Gallery |
             </p>
-            <h2 className="text-4xl md:text-5xl text-start md:text-center font-serif max-w-4xl mx-auto leading-tight">
+            <h2 className="text-3xl md:text-5xl text-center font-serif max-w-4xl mx-auto leading-tight">
               Le lieu de vos rêves, où vous vous plongerez complètement dans une atmosphère de détente et de tranquillité.
             </h2>
           </FadeIn>
@@ -132,6 +132,7 @@ const GalleryImage = ({ src, index, onOpen, className }) => (
         src={src}
         alt=""
         loading="lazy"
+        decoding="async"
         className="w-full h-full min-h-55 object-cover transition-transform duration-700 hover:scale-105"
       />
     </div>
@@ -170,6 +171,8 @@ const Lightbox = ({ images, index, setIndex }) => {
         <img
           src={images[index]}
           alt=""
+          loading="lazy"
+          decoding="async"
           className="w-full max-h-[85vh] object-contain rounded-2xl"
         />
 

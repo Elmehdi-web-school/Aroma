@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 const images = [
-  "/images/pic5.jpg",
-  "/images/pic3.jpg",
-  "/images/pic4.jpg",
+  "/images/pic5.webp",
+  "/images/pic3.webp",
+  "/images/pic4.webp",
 ];
 
 const Landing = ({ children }) => {

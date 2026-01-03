@@ -3,6 +3,9 @@ import Landing from "../components/Landing";
 import Footer from "../components/Footer";
 import FadeIn from "../components/FadeIn";
 
+import { Leaf, CookingPot, Mountain } from "lucide-react";
+
+
 const About = () => {
   return (
     <>
@@ -49,7 +52,7 @@ const About = () => {
       </section>
 
       {/* ===== EXPERIENCE ===== */}
-      <section className="py-36 bg-[#f2f0bf]">
+      <section className="py-36 bg-[#e9f2f1]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <FadeIn>
             <span className="text-sm tracking-widest text-[#8B5E3C]">| 02 |</span>
@@ -60,29 +63,38 @@ const About = () => {
 
           <div className="grid md:grid-cols-3 gap-14">
             {[
-              [
-                "🌿",
-                "Éco-tourisme",
-                "Permaculture, durabilité et respect de la nature",
-              ],
-              [
-                "🥘",
-                "Culture & partage",
-                "Cours de cuisine, ateliers et échanges culturels",
-              ],
-              [
-                "🏔️",
-                "Nature & calme",
-                "Randonnées, méditation et paysages grandioses",
-              ],
+              {
+                icon: Leaf,
+                title: "Éco-tourisme",
+                text: "Permaculture, durabilité et respect de la nature",
+              },
+              {
+                icon: CookingPot,
+                title: "Culture & partage",
+                text: "Cours de cuisine, ateliers et échanges culturels",
+              },
+              {
+                icon: Mountain,
+                title: "Nature & calme",
+                text: "Randonnées, méditation et paysages grandioses",
+              },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
                 <div className="bg-white p-10 rounded-3xl shadow-xl">
-                  <div className="text-5xl mb-6">{item[0]}</div>
+                  <item.icon
+                    size={48}
+                    strokeWidth={1.25}
+                    className="text-[#8B5E3C] mb-6 mx-auto"
+                  />
+
                   <h3 className="text-2xl mb-3 text-[#3E2A1A]">
-                    {item[1]}
+                    {item.title}
                   </h3>
-                  <p className="text-[#6B5A44]">{item[2]}</p>
+
+                  <p className="text-[#6B5A44]">
+                    {item.text}
+                  </p>
+
                 </div>
               </FadeIn>
             ))}
@@ -95,9 +107,11 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
           <FadeIn>
             <img
-              src="/images/pic6.jpg"
+              src="/images/pic6.webp"
               className="rounded-3xl shadow-2xl object-cover"
               alt="Anir Aroma Dades"
+              loading="lazy"
+              decoding="async"
             />
           </FadeIn>
 
@@ -127,7 +141,7 @@ const About = () => {
       </section>
 
       {/* ===== LOCATION ===== */}
-      <section className="py-36 bg-[#f2f0bf]">
+      <section className="py-36 bg-[#e9f2f1]">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <FadeIn>
             <span className="text-sm tracking-widest text-[#8B5E3C]">| 04 |</span>
@@ -161,7 +175,7 @@ const About = () => {
       <section
         className="relative py-36 text-center text-white"
         style={{
-          backgroundImage: "url(/images/pic2.jpg)",
+          backgroundImage: "url(/images/pic2.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

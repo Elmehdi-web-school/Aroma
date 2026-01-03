@@ -34,31 +34,30 @@ import {
 } from "lucide-react";
 
 const cuisineImages = [
-  "/images/pic10.jpg",
-  "/images/pic11.jpg",
-  "/images/pic12.jpg",
-  "/images/pic13.jpg",
-  "/images/pic14.jpg",
+  "/images/pic10.webp",
+  "/images/pic11.webp",
+  "/images/pic12.webp",
+  "/images/pic13.webp",
+  "/images/pic14.webp",
 ];
 
 const detenteImages = [
-  "/images/pic18.jpg",
-  "/images/pic19.jpg",
-  "/images/pic20.jpg",
-  "/images/pic21.jpg",
+  "/images/pic18.webp",
+  "/images/pic19.webp",
+  "/images/pic20.webp",
 ];
 
 const excursionImages = [
-  "/images/pic15.jpg",
-  "/images/pic16.jpg",
-  "/images/pic17.jpg",
+  "/images/pic15.webp",
+  "/images/pic16.webp",
+  "/images/pic17.webp",
 ];
 
 
 
 /* ===== DATA ===== */
-const rooms = ["/images/room1.jpg","/images/room2.jpg","/images/room3.jpg","/images/room4.jpg","/images/room5.jpg"];
-const gallery = ["/images/pic1.jpg","/images/pic2.jpg","/images/pic3.jpg","/images/pic4.jpg","/images/pic5.jpg","/images/pic6.jpg"];
+const rooms = ["/images/room1.webp","/images/room2.webp","/images/room3.webp","/images/room4.webp","/images/room5.webp"];
+const gallery = ["/images/pic1.webp","/images/pic2.webp","/images/pic3.webp","/images/pic4.webp","/images/pic5.webp","/images/pic6.webp"];
 
 const reviews = [
   { text: "Un lieu magique, calme absolu et accueil exceptionnel.", author: "Marie – France", rating: "★★★★★ 9,1/10" },
@@ -174,13 +173,14 @@ const Home = () => {
       </Landing>
 
       {/* ===== 01 EXPERIENCES ===== */}
+      
       <Section title="Expériences uniques" number="01">
         {[
           ["🌿","Nature préservée","Paysages sauvages de la vallée des Dades"],
           ["🏺","Culture berbère","Architecture et traditions locales"],
           ["🌙","Calme absolu","Un refuge loin du monde moderne"],
         ].map((i,idx)=>(
-          <Card key={idx} icon={i[0]} title={i[1]} text={i[2]} hover />
+          <FadeIn><Card key={idx} icon={i[0]} title={i[1]} text={i[2]} hover /></FadeIn>
         ))}
       </Section>
 
@@ -193,10 +193,10 @@ const Home = () => {
     </h2>
   </FadeIn>
 
-  <div className="space-y-44 max-w-7xl mx-auto px-6">
+  <div className="space-y-20 md:space-y-44 max-w-7xl mx-auto px-6">
 
     {/* === CUISINE LOCALE === */}
-    <div className="grid md:grid-cols-2 gap-20 items-center">
+    <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-center">
       {/* TEXT */}
       <FadeIn>
       <div className="relative z-10 md:mb-32">
@@ -223,6 +223,8 @@ const Home = () => {
         <img
           src={cuisineImages[cuisineIndex]}
           className="w-full h-80 md:h-105 object-cover rounded-md"
+          loading="lazy"
+          decoding="async"
         />
         <SliderButtons
           prev={() =>
@@ -237,49 +239,50 @@ const Home = () => {
     </div>
 
     {/* === ESPACES DÉTENTE (REVERSED) === */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-32 items-center">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-32 items-center">
 
-  {/* IMAGE SLIDER — LEFT ON DESKTOP */}
-  <FadeIn>
-  <div className="relative order-2 md:order-1 md:col-start-1">
-    <div className="absolute -inset-6 bg-white/60 rounded-md -z-10" />
-    <img
-      src={detenteImages[detenteIndex]}
-      className="w-full h-80 md:h-105 object-cover rounded-md"
-    />
-    <SliderButtons
-      prev={() =>
-        setDetenteIndex(i => (i - 1 + detenteImages.length) % detenteImages.length)
-      }
-      next={() =>
-        setDetenteIndex(i => (i + 1) % detenteImages.length)
-      }
-    />
-  </div>
+  {/* TEXT — mobile first, desktop right */}
+  <FadeIn className="order-1 md:order-2 md:col-start-2">
+    <div className="relative z-10 md:mb-32">
+      <Flame size={56} strokeWidth={1.25} className="text-[#d6caa1] mb-8" />
+      <h3 className="text-4xl font-serif mb-6">Espaces détente</h3>
+      <p className="text-lg text-gray-700 leading-relaxed max-w-md">
+        Profitez de terrasses panoramiques, salons chaleureux et feux de camp
+        pour des moments de calme absolu sous le ciel étoilé.
+      </p>
+    </div>
   </FadeIn>
 
-  {/* TEXT — RIGHT ON DESKTOP */}
-  <FadeIn>
-  <div className="relative z-10 order-1 md:order-2 md:col-start-2 md:mb-32">
-    <Flame
-      size={56}
-      strokeWidth={1.25}
-      className="text-[#d6caa1] mb-8"
-    />
-
-    <h3 className="text-4xl font-serif mb-6">Espaces détente</h3>
-    <p className="text-lg text-gray-700 leading-relaxed max-w-md">
-      Profitez de terrasses panoramiques, salons chaleureux et feux de camp
-      pour des moments de calme absolu sous le ciel étoilé.
-    </p>
-  </div>
+  {/* IMAGE — mobile second, desktop left */}
+  <FadeIn className="order-2 md:order-1 md:col-start-1">
+    <div className="relative">
+      <div className="absolute -inset-6 bg-white/60 rounded-md -z-10" />
+      <img
+        src={detenteImages[detenteIndex]}
+        className="w-full h-80 md:h-105 object-cover rounded-md"
+        loading="lazy"
+        decoding="async"
+      />
+      <SliderButtons
+        prev={() =>
+          setDetenteIndex(i => (i - 1 + detenteImages.length) % detenteImages.length)
+        }
+        next={() =>
+          setDetenteIndex(i => (i + 1) % detenteImages.length)
+        }
+      />
+    </div>
   </FadeIn>
 
 </div>
 
 
+
+
+
+
     {/* === EXCURSIONS === */}
-    <div className="grid md:grid-cols-2 gap-20 items-center">
+    <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-center">
       {/* TEXT */}
       <FadeIn>
       <div className="relative z-10 md:mb-32">
@@ -304,6 +307,8 @@ const Home = () => {
         <img
           src={excursionImages[excursionIndex]}
           className="w-full h-80 md:h-105 object-cover rounded-md"
+          loading="lazy"
+          decoding="async"
         />
         <SliderButtons
           prev={() =>
@@ -530,7 +535,7 @@ const ImageSlider = ({title,number,src,onPrev,onNext})=>(
       <h2 className="text-5xl font-serif mt-6 mb-16">{title}</h2>
     </FadeIn>
     <div className="relative max-w-6xl mx-auto">
-      <img src={src} className="w-[80%] h-80 md:h-130 object-cover mx-auto" />
+      <img src={src} className="w-[80%] h-80 md:h-130 object-cover mx-auto" loading="lazy" decoding="async" />
       <SliderButtons prev={onPrev} next={onNext}/>
     </div>
   </section>

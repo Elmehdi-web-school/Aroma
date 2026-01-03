@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const FadeIn = ({ children, delay = 0 }) => {
+const FadeIn = ({ children, delay = 0, className = "" }) => {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
 
@@ -23,8 +23,11 @@ const FadeIn = ({ children, delay = 0 }) => {
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ease-out
-        ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
+      className={`
+        transition-all duration-700 ease-out
+        ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
+        ${className}
+      `}
     >
       {children}
     </div>

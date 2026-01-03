@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto pl-10 py-20 grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-40">
         {/* Brand */}
         <div>
-          <img src="/images/Untitled design.png" alt="Aroma Hotel logo" className="w-20 sm:w-28 h-auto object-contain" />
+          <img src="/images/untitled-design.webp" alt="Aroma Hotel logo" loading="lazy" decoding="async" className="w-20 sm:w-28 h-auto object-contain" />
           <h3 className="text-3xl font-serif mb-6">
             Aroma Dades
           </h3>

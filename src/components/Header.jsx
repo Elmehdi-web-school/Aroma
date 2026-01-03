@@ -33,7 +33,7 @@ const Header = () => {
         {/* Left: logo */}
         <div className="flex items-center">
           <Link to="/" className="logo w-20 sm:w-28 h-auto object-contain">
-            <img src="/images/Untitled design.png" alt="Aroma Hotel logo" />
+            <img src="/images/untitled-design.webp" alt="Aroma Hotel logo" loading="lazy" decoding="async" />
           </Link>
         </div>
 
