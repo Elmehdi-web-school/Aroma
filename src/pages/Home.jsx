@@ -60,76 +60,56 @@ const rooms = ["/images/room1.webp","/images/room2.webp","/images/room3.webp","/
 const gallery = ["/images/pic1.webp","/images/pic2.webp","/images/pic3.webp","/images/pic4.webp","/images/pic5.webp","/images/pic6.webp"];
 
 const reviews = [
-  { text: "Un lieu magique, calme absolu et accueil exceptionnel.", author: "Marie – France", rating: "★★★★★ 9,1/10" },
-  { text: "Vue incroyable sur la vallée, chambres magnifiques.", author: "Lucas – Belgique", rating: "★★★★★ 9,3/10" },
-  { text: "Une expérience berbère authentique et inoubliable.", author: "Anna – Allemagne", rating: "★★★★★ 9,2/10" },
+  { text: "A magical place, absolute calm and exceptional hospitality.", author: "Marie – France", rating: "★★★★★ 9,1/10" },
+  { text: "Incredible view of the valley, magnificent rooms.", author: "Lucas – Belgium", rating: "★★★★★ 9,3/10" },
+  { text: "An authentic and unforgettable Berber experience.", author: "Anna – Germany", rating: "★★★★★ 9,2/10" },
 ];
 
 const activities = [
   {
     icon: Mountain,
-    title: "Randonnée",
-    text: "Explorez les sentiers naturels de la vallée des Dades avec des vues spectaculaires.",
+    title: "Hiking",
+    text: "Explore the natural trails of the Dades Valley with spectacular views.",
   },
   {
     icon: Bike,
-    title: "Balades à vélo",
-    text: "Découvrez les villages et paysages environnants à votre rythme.",
+    title: "Biking",
+    text: "Discover the villages and surrounding landscapes at your own pace.",
   },
   {
     icon: CookingPot,
-    title: "Cours de cuisine",
-    text: "Apprenez à préparer des plats marocains traditionnels avec nos chefs.",
+    title: "Cooking Classes",
+    text: "Learn to prepare traditional Moroccan dishes with our chefs.",
   },
   {
     icon: Flame,
-    title: "Soirées traditionnelles",
-    text: "Musique, feu de camp et ambiance berbère sous les étoiles.",
+    title: "Evening Gatherings",
+    text: "Music, campfire and Berber atmosphere under the stars.",
   },
   {
     icon: Landmark,
-    title: "Culture locale",
-    text: "Immersion dans les traditions, l’artisanat et la vie locale.",
+    title: "Local culture",
+    text: "Immersion in local traditions, crafts and life.",
   },
   {
     icon: Compass,
     title: "Excursions",
-    text: "Sorties organisées hors de l’établissement vers des sites uniques.",
+    text: "Organized outings outside the institution to unique sites.",
   },
   {
     icon: Bike,
-    title: "Location de vélos",
-    text: "Vélos disponibles sur place pour explorer la région. En supplément.",
-  },
-  {
-    icon: Music,
-    title: "Concerts & spectacles",
-    text: "Soirées animées avec musique live et spectacles traditionnels. En supplément.",
-  },
-  {
-    icon: Wine,
-    title: "Happy hour",
-    text: "Moments conviviaux autour de boissons sélectionnées. En supplément.",
-  },
-  {
-    icon: UtensilsCrossed,
-    title: "Dîners à thème",
-    text: "Expériences culinaires uniques autour de thèmes marocains. En supplément.",
+    title: "Bike Rentals",
+    text: "Bicycles available on site to explore the region. Additional charge applies.",
   },
   {
     icon: Bike,
-    title: "Visites à vélo",
-    text: "Circuits guidés à vélo pour découvrir les environs. En supplément.",
+    title: "Cycling Tours",
+    text: "Guided cycling circuits to discover the surroundings. Additional charge applies.",
   },
   {
     icon: Footprints,
-    title: "Balades à pied",
-    text: "Promenades accompagnées à travers paysages et villages locaux. En supplément.",
-  },
-  {
-    icon: PartyPopper,
-    title: "Animations en soirée",
-    text: "Ambiances festives et moments de partage après le coucher du soleil.",
+    title: "Hiking Tours",
+    text: "Guided walks through landscapes and local villages. Additional charge applies.",
   },
 ];
 
@@ -173,12 +153,12 @@ const Home = () => {
       </Landing>
 
       {/* ===== 01 EXPERIENCES ===== */}
-      
-      <Section title="Expériences uniques" number="01">
+
+      <Section title="Unique Experiences" number="01">
         {[
-          ["🌿","Nature préservée","Paysages sauvages de la vallée des Dades"],
-          ["🏺","Culture berbère","Architecture et traditions locales"],
-          ["🌙","Calme absolu","Un refuge loin du monde moderne"],
+          ["🌿","Nature preserved","Wild landscapes of the Dades Valley"],
+          ["🏺","Berber culture","Architecture and local traditions"],
+          ["🌙","Absolute calm","A refuge far from modern life"],
         ].map((i,idx)=>(
           <FadeIn><Card key={idx} icon={i[0]} title={i[1]} text={i[2]} hover /></FadeIn>
         ))}
@@ -189,7 +169,7 @@ const Home = () => {
   <FadeIn>
     <span className="text-sm tracking-widest block text-center">| 02 |</span>
     <h2 className="text-5xl font-serif mt-6 mb-32 text-center">
-      Nos services
+      Our services
     </h2>
   </FadeIn>
 
@@ -208,10 +188,9 @@ const Home = () => {
           />
         </div>
 
-        <h3 className="text-4xl font-serif mb-6">Cuisine locale</h3>
+        <h3 className="text-4xl font-serif mb-6">Local cuisine</h3>
         <p className="text-lg text-gray-700 leading-relaxed max-w-md">
-          Des produits frais, issus du terroir, cuisinés chaque jour selon
-          des recettes traditionnelles transmises de génération en génération.
+          Fresh, locally sourced produce, cooked daily according to traditional recipes passed down from generation to generation.
         </p>
       </div>
       </FadeIn>
@@ -245,10 +224,9 @@ const Home = () => {
   <FadeIn className="order-1 md:order-2 md:col-start-2">
     <div className="relative z-10 md:mb-32">
       <Flame size={56} strokeWidth={1.25} className="text-[#d6caa1] mb-8" />
-      <h3 className="text-4xl font-serif mb-6">Espaces détente</h3>
+      <h3 className="text-4xl font-serif mb-6">Relaxation areas</h3>
       <p className="text-lg text-gray-700 leading-relaxed max-w-md">
-        Profitez de terrasses panoramiques, salons chaleureux et feux de camp
-        pour des moments de calme absolu sous le ciel étoilé.
+        Enjoy panoramic terraces, cozy lounges and campfires for moments of absolute calm under the starry sky.
       </p>
     </div>
   </FadeIn>
@@ -294,8 +272,7 @@ const Home = () => {
 
         <h3 className="text-4xl font-serif mb-6">Excursions</h3>
         <p className="text-lg text-gray-700 leading-relaxed max-w-md">
-          Partez à la découverte de la vallée des Dades à travers des randonnées
-          guidées, villages berbères et paysages spectaculaires.
+          Guided tours to explore the stunning landscapes, local villages, and cultural heritage of the Dades Valley and surrounding areas.
         </p>
       </div>
       </FadeIn>
@@ -334,20 +311,20 @@ const Home = () => {
             | 03 |
           </span>
           <h2 className="text-5xl font-serif mt-6 mb-20 text-center">
-            Activités
+            Activities
           </h2>
         </FadeIn>
 
         <div className="relative max-w-7xl mx-auto px-6">
         
           {/* ===== DESKTOP GRID (NO SLIDE EVER) ===== */}
-          <div className="hidden md:grid grid-cols-3 gap-px bg-white/10">
+          <div className="hidden md:grid grid-cols-3 mb-10 gap-px bg-white/10">
             {activities.map((a, idx) => (
               <div
                 key={idx}
                 className={`
                   bg-[#1f1f1f] p-10 min-h-65 flex flex-col
-                  ${idx === activities.length - 1 ? "md:col-span-3 md:items-center md:text-center" : ""}
+                  
                 `}
               >
 
@@ -367,6 +344,7 @@ const Home = () => {
             </div>
           ))}
         </div>
+
     {/* ===== MOBILE SLIDER ONLY ===== */}
 <div className="md:hidden overflow-hidden">
   <div
@@ -397,8 +375,11 @@ const Home = () => {
     ))}
   </div>
 
+  
+  
+
   {/* MOBILE ARROWS */}
-  <div className="flex justify-between mt-10">
+  <div className="flex justify-between">
     <button
       onClick={() =>
         setActivityIndex(
@@ -421,8 +402,18 @@ const Home = () => {
       ›
     </button>
   </div>
+
 </div>
 
+
+  </div>
+  <div className="mt-20">
+    <a
+      href="/activities"
+      className="p-5 ml-[33%] md:ml-[42%] text-center border border-white rounded-full text-white hover:bg-[#d6caa1] hover:text-black font-bold transition"
+    >
+      View details
+    </a>
   </div>
 </section>
 
@@ -438,21 +429,21 @@ const Home = () => {
       <FadeIn>
         <span className="text-sm tracking-widest">| 05 |</span>
         <h2 className="text-5xl font-serif mt-6 mb-20">
-          Équipements
+          Equipments
         </h2>
       </FadeIn>
 
   <div className="grid grid-cols-2 md:grid-cols-5 gap-10 max-w-6xl mx-auto px-6 text-sm text-start">
     {[
-      { icon: <Bus size={22} />, label: "Navette aéroport" },
-      { icon: <ParkingCircle size={22} />, label: "Parking gratuit" },
-      { icon: <Ban size={22} />, label: "Chambres non-fumeurs" },
+      { icon: <Bus size={22} />, label: "Airport shuttle" },
+      { icon: <ParkingCircle size={22} />, label: "Free parking" },
+      { icon: <Ban size={22} />, label: "Non-smoking rooms" },
       { icon: <Utensils size={22} />, label: "Restaurant" },
       { icon: <Accessibility size={22} />, label: "Accès PMR" },
-      { icon: <ConciergeBell size={22} />, label: "Service d’étage" },
-      { icon: <Wifi size={22} />, label: "Wi-Fi gratuit" },
-      { icon: <Users size={22} />, label: "Chambres familiales" },
-      { icon: <Coffee size={22} />, label: "Petit-déjeuner" },
+      { icon: <ConciergeBell size={22} />, label: "Room service" },
+      { icon: <Wifi size={22} />, label: "Free Wi-Fi" },
+      { icon: <Users size={22} />, label: "Family rooms" },
+      { icon: <Coffee size={22} />, label: "Breakfast" },
     ].map((item, idx) => (
       <div
         key={idx}
@@ -475,7 +466,7 @@ const Home = () => {
       <section className="py-36 bg-white text-center relative">
         <FadeIn>
           <span className="text-sm tracking-widest">| 07 |</span>
-          <h2 className="text-5xl font-serif mt-6 mb-20">Avis des voyageurs</h2>
+          <h2 className="text-5xl font-serif mt-6 mb-20">Traveler Reviews</h2>
         </FadeIn>
 
         <div className="flex justify-center gap-10 max-w-6xl mx-auto px-6 flex-col md:flex-row">

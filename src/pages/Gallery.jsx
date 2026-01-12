@@ -32,7 +32,7 @@ const Gallery = () => {
         <section className="py-20 md:py-40 text-center">
           <FadeIn>
             <span className="text-xl md:text-2xl md:font-bold tracking-widest text-white">
-              | GALLERIE |
+              | Rooms |
             </span>
             <h1 className="text-3xl md:text-7xl font-serif mt-8 text-amber-400">
               Instants d’Aroma Dades

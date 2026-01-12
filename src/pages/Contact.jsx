@@ -16,10 +16,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_wdyasrn",
+        "template_82a0zs1",
         formRef.current,
-        "YOUR_PUBLIC_KEY"
+        "KOvv3LcIxcyDn4YAs"
       )
       .then(
         () => {
@@ -28,7 +28,7 @@ const Contact = () => {
           formRef.current.reset();
         },
         () => {
-          alert("Une erreur est survenue. Veuillez réessayer.");
+          alert("An error has occurred. Please try again..");
           setLoading(false);
         }
       );
@@ -43,10 +43,10 @@ const Contact = () => {
         <section className="py-20 md:py-40 text-center">
           <FadeIn>
             <span className="text-xl md:text-2xl md:font-bold tracking-widest text-white">
-              | NOUS CONTACTER |
+              | CONTACT US |
             </span>
             <h1 className="text-3xl md:text-7xl font-serif mt-8 text-amber-400">
-              Informations de contact
+              Contact Information
             </h1>
           </FadeIn>
         </section>
@@ -59,29 +59,29 @@ const Contact = () => {
           <FadeIn>
             <div>
               <h2 className="text-4xl font-serif mb-6">
-                Contactez-nous à tout moment pour réserver votre séjour
+                Contact us anytime to book your stay
               </h2>
               <p className="text-gray-600 max-w-md">
-                Une question, un commentaire ou une demande particulière ?
-                Nous sommes là pour vous aider et serons ravis d’échanger avec vous.
+                Have a question, comment, or special request?
+                We're here to help and would be delighted to connect with you.
               </p>
 
               <div className="mt-12 space-y-6 text-sm">
                 <div>
                   <p className="uppercase tracking-widest mb-2">
-                    Horaires
+                    Schedules
                   </p>
-                  <p>Lundi – Vendredi : 22h – 08h</p>
-                  <p>Samedi – Dimanche : 20h – 10h</p>
+                  <p>Monday – Friday: 10pm – 8am</p>
+                  <p>Saturday – Sunday: 8pm – 10am</p>
                 </div>
 
                 <div className="pt-6 border-t space-y-6">
                   <h3 className="text-xl font-serif">
                     Souk Elkhmis Dades, Maroc
                   </h3>
-                  <p>📍 Vallée des Dades – Vallée des Roses</p>
-                  <p>📞 +212 XXX XXX XXX</p>
-                  <p>✉️ contact@aromadades.com</p>
+                  <p>📍 Dades Gorge – Roses Valley, Mgoune Valleys</p>
+                  <p>📞 +212 661396310  -   +212613756927</p>
+                  <p>✉️ moroccoexposure@gmail.com</p>
                 </div>
               </div>
             </div>

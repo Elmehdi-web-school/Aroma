@@ -24,6 +24,11 @@
   animation: scrollDot 1.8s infinite;
 }
 
+html,
+body{
+    scroll-behavior: smooth;
+}
+
 
 
 
@@ -193,6 +198,17 @@ body > * {
   @apply w-full border border-gray-300 rounded-full px-6 py-4 text-sm
   focus:outline-none focus:ring-1 focus:ring-black;
 }
+
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
 
 
 /* Navigation visual polish */

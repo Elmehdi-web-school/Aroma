@@ -21,7 +21,7 @@ const Footer = () => {
 
         {/* Contact */}
         <div>
-          <h4 className="uppercase tracking-widest text-sm mb-6">
+          <h4 className="uppercase font-bold tracking-widest md:mt-10 text-sm mb-6">
             Contact
           </h4>
           <ul className="space-y-3">
@@ -33,7 +33,7 @@ const Footer = () => {
 
         {/* Social */}
         <div>
-          <h4 className="uppercase tracking-widest text-sm mb-6">
+          <h4 className="uppercase font-bold tracking-widest md:mt-10 text-sm mb-6">
             Suivez-nous
           </h4>
           <div className="flex gap-2">
