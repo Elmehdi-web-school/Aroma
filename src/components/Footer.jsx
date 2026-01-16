@@ -25,9 +25,9 @@ const Footer = () => {
             Contact
           </h4>
           <ul className="space-y-3">
-            <li>Vallée des Dades, Maroc</li>
-            <li>+212 6 XX XX XX XX</li>
-            <li>contact@aromadades.com</li>
+            <li>Dades Gorge – Roses Valley, Mgoune Valleys</li>
+            <li>+212 661396310 - +212613756927</li>
+            <li>moroccoexposure@gmail.com</li>
           </ul>
         </div>
 
