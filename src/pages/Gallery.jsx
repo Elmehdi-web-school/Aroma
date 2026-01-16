@@ -79,7 +79,7 @@ const Gallery = () => {
                 index={i}
                 onOpen={setActiveIndex}
                 className={`
-                  ${i % 3 === 1 ? "lg:row-span-3 rounded-full" : "lg:row-span-2 rounded-[40px]"}
+                  ${i % 3 === 1 ? "lg:row-span-3 md:rounded-full" : "lg:row-span-2 md:rounded-[40px]"}
                 `}
               />
             ))}
@@ -92,7 +92,7 @@ const Gallery = () => {
                   src={src}
                   index={i + 9}
                   onOpen={setActiveIndex}
-                  className="w-full sm:w-[320px] h-55 rounded-full"
+                  className="w-full sm:w-[320px] h-55 md:rounded-full"
                 />
               ))}
             </div>

@@ -14,10 +14,7 @@ import {
 } from "lucide-react";
 
 import {
-  Music,
-  Wine,
   Footprints,
-  PartyPopper,
 } from "lucide-react";
 
 import {
@@ -30,7 +27,6 @@ import {
   Wifi,
   Users,
   Coffee,
-  Croissant
 } from "lucide-react";
 
 const cuisineImages = [
@@ -410,7 +406,7 @@ const Home = () => {
   <div className="mt-20">
     <a
       href="/activities"
-      className="p-5 ml-[33%] md:ml-[42%] text-center border border-white rounded-full text-white hover:bg-[#d6caa1] hover:text-black font-bold transition"
+      className="p-5 ml-[33%] md:ml-[45%] text-center border border-white rounded-full text-white hover:bg-[#d6caa1] hover:text-black font-bold transition"
     >
       View details
     </a>

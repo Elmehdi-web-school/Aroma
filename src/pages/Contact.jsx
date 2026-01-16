@@ -95,20 +95,20 @@ const Contact = () => {
               className="bg-white rounded-3xl p-10 shadow-lg"
             >
               <h3 className="text-2xl font-serif mb-8">
-                Demande avant réservation
+                Contact us For réservation
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <input
-                  name="name"
+                  name="firstname"
                   required
-                  placeholder="Prénom"
+                  placeholder="first Name"
                   className="input"
                 />
                 <input
                   name="lastname"
                   required
-                  placeholder="Nom"
+                  placeholder="Last Name"
                   className="input"
                 />
               </div>
@@ -117,7 +117,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 required
-                placeholder="Votre adresse e-mail"
+                placeholder="email address"
                 className="input mb-6"
               />
 
@@ -125,7 +125,7 @@ const Contact = () => {
                 name="message"
                 rows="5"
                 required
-                placeholder="Votre message"
+                placeholder="Your Message"
                 className="w-full border border-gray-300 rounded-md px-6 py-4 text-sm
                 focus:outline-none focus:ring-1 focus:ring-black mb-8 resize-none"
               />
@@ -135,12 +135,12 @@ const Contact = () => {
                 disabled={loading}
                 className="w-full bg-black text-white py-4 rounded-full tracking-widest hover:bg-gray-800 transition"
               >
-                {loading ? "ENVOI..." : "ENVOYER"}
+                {loading ? "SEND..." : "SEND MESSAGE"}
               </button>
 
               {success && (
                 <p className="text-green-600 text-center mt-6">
-                  Message envoyé avec succès 🌿
+                  Your message has been sent successfully!
                 </p>
               )}
             </form>

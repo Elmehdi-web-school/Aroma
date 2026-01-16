@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <FadeIn>
-    <header className="container sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm mx-auto px-4 md:mx-auto select-none site-header" >
+    <header className="container z-50 bg-white/80 backdrop-blur-md shadow-sm mx-auto px-4 md:mx-auto select-none site-header" >
       <div className="nav-bar grid grid-cols-3 items-center">
         {/* Left: logo */}
         <div className="flex items-center">
