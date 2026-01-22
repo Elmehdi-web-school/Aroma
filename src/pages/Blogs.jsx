@@ -40,7 +40,7 @@ const Blogs = () => {
 
               {/* ===== BLOG CARD ===== */}
               <Link
-                to="/blogs/full-moon-morocco-2026"
+                to="/full-moon-morocco-2026"
                 target="_blank"
                 className="group block"
               >

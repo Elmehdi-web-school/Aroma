@@ -18,7 +18,7 @@ const App = () => {
         <Route path="/sejour" element={<Sejour />} />
         <Route path="/About" element={<About />} />
         <Route
-          path="/blogs/full-moon-morocco-2026"
+          path="/full-moon-morocco-2026"
           element={<FullMoonMorocco2026 />}
         />
         <Route path="/birds" element={<Birds />} />

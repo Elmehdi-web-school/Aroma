@@ -28,6 +28,7 @@ import {
   Users,
   Coffee,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const cuisineImages = [
   "/images/pic10.webp",
@@ -404,12 +405,12 @@ const Home = () => {
 
   </div>
   <div className="mt-20">
-    <a
-      href="/activities"
+    <Link
+      to="/activities"
       className="p-5 ml-[33%] md:ml-[45%] text-center border border-white rounded-full text-white hover:bg-[#d6caa1] hover:text-black font-bold transition"
     >
       View details
-    </a>
+    </Link>
   </div>
 </section>
 
